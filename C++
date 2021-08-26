@@ -27,7 +27,7 @@ int main()
     "1)largest railway station    2)highest railway station    3)longest railway station  4)None of the above",
     "1)Behavior of human beings    2)Insects    3) The origin and history of technical and scientific terms    4)The formation of rocks",
     "1)Asia    2)Africa    3)Europe    4)Australia",
-    "1)Junagarh, Gujarat    2)Diphu, Assam    3)Kohima, Nagaland   4)Gangtok, Sikkim"
+    "1)Junagarh, Gujarat    2)Diphu, Assam    3)Kohima, Nagaland   4)Gangtok, Sikkim",
     "1)Physics and Chemistry    2)Physiology or Medicine    3)Literature, Peace and Economics   4)All of the above"
     };
     int ans[5] = { 1,2,2,2,4 };

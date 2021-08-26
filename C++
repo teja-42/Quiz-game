@@ -1,0 +1,99 @@
+#include <iostream>
+#include<string>
+using namespace std;
+void showMenu()
+{
+    cout << "=================================================================" << endl;
+    cout << "===================== Quiz App ==================================" << endl;
+    cout << "=================================================================" << endl;
+    cout << "\n\n\n";
+    cout << "1) New Quiz" << endl;
+    cout << "2) Highest Score" << endl;
+    cout << "3) Exit" << endl;
+
+}
+
+int main()
+{
+    system("COLOR 47");
+    string questions[5] = {
+        "1)Grand Central Terminal, Park Avenue, New York is the world's?",
+        "2)Entomology is the science that studies?",
+        "3)Eritrea, which became the 182nd member of the UN in 1993, is in the continent of?",
+        "4)Garampani sanctuary is located at?",
+        "5)For which of the following disciplines is Nobel Prize awarded?"
+    };
+    string options[5] = {
+    "1)largest railway station    2)highest railway station    3)longest railway station  4)None of the above",
+    "1)Behavior of human beings    2)Insects    3) The origin and history of technical and scientific terms    4)The formation of rocks",
+    "1)Asia    2)Africa    3)Europe    4)Australia",
+    "1)Junagarh, Gujarat    2)Diphu, Assam    3)Kohima, Nagaland   4)Gangtok, Sikkim"
+    "1)Physics and Chemistry    2)Physiology or Medicine    3)Literature, Peace and Economics   4)All of the above"
+    };
+    int ans[5] = { 1,2,2,2,4 };
+    string playerName;
+    int highestScore = 0;
+
+    char ch = 'y';
+    while (ch == 'y')
+    {
+        int CurrentResult = 0;
+        string CurrentPlayer;
+        system("COLOR 46");
+        system("CLS");
+        showMenu();
+        int Menu;
+        cin >> Menu;
+        switch (Menu)
+        {
+        case 1:
+            system("COLOR 74");
+            cout << "Enter your name: ";
+            cin >> CurrentPlayer;
+         
+            for (int i = 0; i < 5; i++)
+            {
+            system("CLS");
+            cout << "===============================================" << endl;
+            cout << "====================Playing QUIZ=================" << endl;
+            cout << "===============================================\n\n" << endl;
+                int op;
+                cout << "\n\n" <<questions[i] << endl;
+                cout << options[i] << endl<<endl;
+                cout << "Enter Option: ";
+                cin >> op;
+                cout << "\n\n";
+                if (op == ans[i])
+                {
+                    CurrentResult++;
+                    if (CurrentResult > highestScore) 
+                    {
+                        highestScore = CurrentResult;
+                        playerName = CurrentPlayer;
+                    }
+                }
+            }
+            cout << "\n\n Your Score: " << CurrentResult << endl;
+        break;
+        case 2:
+            system("CLS");
+            cout << "==============================================="<<endl;
+            cout << "====================Highest Score================="<<endl;
+            cout << "==============================================="<<endl;
+            cout << "\n\n Highest  Score is " << highestScore << "By " << playerName<<endl;
+            break;
+        case 3:
+            cout << "Thank you for using Quiz App..";
+            exit(0);
+        break;
+        default:
+            cout << "Worng Selection";
+
+        }
+        cout << "Do you want to continue y/n ?";
+        cin >> ch;
+    }
+
+
+    return 0;
+}
